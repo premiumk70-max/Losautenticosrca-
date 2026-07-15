@@ -1,0 +1,140 @@
+# Losautenticosrca-<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Auténticos de Mérida - RCA</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+        body{background:#1a1a2e;color:#fff;max-width:900px;margin:0 auto;padding:15px}
+        h1,h2,h3{color:#ffc439;margin-bottom:12px}
+        h1{text-align:center;margin-bottom:20px;font-size:1.7em}
+        .menu{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;background:#16213e;padding:12px;border-radius:12px}
+        .menu button{flex:1;min-width:120px;padding:10px;border:none;border-radius:6px;background:#0f3460;color:#fff;font-weight:bold;cursor:pointer}
+        .menu button.activo{background:#ffc439;color:#000}
+        .seccion{display:none;background:#16213e;border-radius:12px;padding:18px;margin-bottom:18px}
+        .seccion.visible{display:block}
+        .en-vivo{border:2px solid #e94560;background:rgba(233,69,96,0.15);margin-bottom:20px}
+        .etiqueta-vivo{display:inline-block;background:#e94560;padding:5px 12px;border-radius:6px;font-weight:bold;margin-bottom:12px;animation:parpadeo 1.5s infinite}
+        @keyframes parpadeo{0%{opacity:1}50%{opacity:0.5}100%{opacity:1}}
+        .reproductor{width:100%;border-radius:8px;margin:15px 0;overflow:hidden;background:#000}
+        .galeria{display:grid;grid-template-columns:repeat(auto-fit, minmax(140px,1fr));gap:10px;margin-top:12px}
+        .galeria img{width:100%;border-radius:8px;border:2px solid #ffc439}
+        .lista-canciones,.lista-integrantes{margin-top:12px}
+        .cancion,.integrante{padding:8px;border-bottom:1px solid #0f3460}
+        .cancion:last-child,.integrante:last-child{border-bottom:none}
+        .destacada{color:#ffc439;font-weight:bold}
+        .biografia p{margin-bottom:10px;line-height:1.7;text-align:justify}
+        .chat-seccion{border:3px solid #ffc439;background:rgba(255,196,57,0.1);margin-top:20px}
+        .chat-caja{background:#0f3460;border-radius:8px;padding:12px;margin-bottom:12px;height:220px;overflow-y:auto}
+        .mensaje{background:#16213e;border-radius:8px;padding:8px 12px;margin-bottom:8px;font-size:0.95em}
+        .mensaje .nombre{font-weight:bold;color:#ffc439;margin-right:6px}
+        .chat-form{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+        .chat-input{flex:1;min-width:150px;padding:10px;border-radius:6px;border:none;color:#000}
+        .chat-boton{background:#e94560;color:#fff;border:none;padding:10px 18px;border-radius:6px;font-weight:bold;cursor:pointer}
+        .chat-boton:hover{background:#ffc439;color:#000}
+    </style>
+</head>
+<body>
+    <h1>🎶 Los Auténticos de Mérida - RCA</h1>
+    <div class="menu">
+        <button class="activo" onclick="mostrarSeccion('radio')">📻 Radio 24/7</button>
+        <button onclick="mostrarSeccion('grupo')">🎤 El Grupo</button>
+        <button onclick="mostrarSeccion('exitos')">🎵 Éxitos</button>
+    </div>
+
+    <div id="radio" class="seccion visible">
+        <div class="en-vivo">
+            <div class="etiqueta-vivo">🔴 81 CANCIONES - SUENA AUTOMÁTICO</div>
+            <h2>Escucha Los Auténticos RCA</h2>
+            <p>✅ Lista oficial: se repite todo el día, 100% gratis</p>
+            <div class="reproductor">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/videoseries?list=PLulD0YPD-pe43PUTgow9eTFA8nlmi5BnD&autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media; fullscreen"></iframe>
+            </div>
+            <p class="destacada">🎵 Canción destacada: Traicionera</p>
+        </div>
+
+        <div class="chat-seccion">
+            <h2>💬 Chat de Complacencias</h2>
+            <div class="chat-caja" id="cajaChat">
+                <div class="mensaje"><span class="nombre">Admin:</span> ¡Todo listo! Escribe tu saludo aquí 👇</div>
+            </div>
+            <form class="chat-form" id="formChat">
+                <input type="text" id="nombreUsuario" class="chat-input" placeholder="Tu nombre" required>
+                <input type="text" id="mensajeUsuario" class="chat-input" placeholder="Tu mensaje..." required>
+                <button type="submit" class="chat-boton">📨 Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="grupo" class="seccion">
+        <h2>📸 Galería Oficial</h2>
+        <div class="galeria">
+            <img src="https://i.postimg.cc/ZRpQvLJK/1000002171.jpg" alt="Portada Los Auténticos">
+            <img src="https://i.postimg.cc/256mWMt4/Air-Brush-Video1774573569075.png" alt="Presentación en vivo">
+            <img src="https://i.postimg.cc/ncGtPnbX/20260321-175114.jpg" alt="Integrantes del grupo">
+        </div>
+        <div class="biografia">
+            <h2>📖 Biografía</h2>
+            <p>Grupo emblemático de Mérida, Yucatán, con más de 42 años de trayectoria y más de 30 producciones discográficas. Referente de la música tropical yucateca en todo México.</p>
+        </div>
+        <h2>🎤 Integrantes</h2>
+        <div class="lista-integrantes">
+            <div class="integrante">Willy Martín - Vocalista</div>
+            <div class="integrante">Pedro Canul - Vocalista</div>
+            <div class="integrante">Russell Cabrera - Vocalista</div>
+            <div class="integrante">Alberto Barahona - Vocalista</div>
+            <div class="integrante">Héctor Canto - Segunda trompeta</div>
+            <div class="integrante">Fernando Canto - Primera trompeta</div>
+            <div class="integrante">Lizardo Canto - Tercera trompeta</div>
+            <div class="integrante">Herbert Bastó - Guitarra</div>
+            <div class="integrante">Julio Santana - Bajo</div>
+            <div class="integrante">Felipe de la Cruz - Teclados</div>
+            <div class="integrante">Rolando Zapata - Batería</div>
+            <div class="integrante">Raúl Zaldívar - Tumbas</div>
+            <div class="integrante">Virgilio Zaldívar - Timbales</div>
+        </div>
+    </div>
+
+    <div id="exitos" class="seccion">
+        <h2>🎵 Éxitos Confirmados</h2>
+        <div class="lista-canciones">
+            <div class="cancion">1. El Elefante</div>
+            <div class="cancion">2. El Querreque</div>
+            <div class="cancion">3. La Vaca Flaca</div>
+            <div class="cancion">4. El Espontáneo</div>
+            <div class="cancion destacada">5. Traicionera</div>
+            <div class="cancion">6. Siqui Siriqui</div>
+            <div class="cancion">7. La Muela</div>
+            <div class="cancion">8. De Hoy y Siempre</div>
+            <div class="cancion">9. El Mundo de la Selva</div>
+            <div class="cancion">10. Rascate</div>
+            <div class="cancion">11. Chisme Caliente</div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarSeccion(id) {
+            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('visible'));
+            document.querySelectorAll('.menu button').forEach(b => b.classList.remove('activo'));
+            document.getElementById(id).classList.add('visible');
+            event.target.classList.add('activo');
+        }
+        const form = document.getElementById('formChat');
+        const caja = document.getElementById('cajaChat');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const nom = document.getElementById('nombreUsuario').value.trim();
+            const msg = document.getElementById('mensajeUsuario').value.trim();
+            if(nom && msg) {
+                const div = document.createElement('div');
+                div.className = 'mensaje';
+                div.innerHTML = `<span class="nombre">${nom}:</span> ${msg}`;
+                caja.appendChild(div);
+                caja.scrollTop = caja.scrollHeight;
+                form.reset();
+            }
+        });
+    </script>
+</body>
+</html>
